@@ -42,7 +42,7 @@ for(const section of sections) {
     navbarList.appendChild(li);
 }
 if(document.body.clientWidth < sections.length * 110){
-    const head = document.querySelector('page-header');
+    const head = document.querySelector('.page-header');
     head.setAttribute('style', 'width:100px');
 }
 /**
