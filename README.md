@@ -10,8 +10,8 @@
 
 ### How to use 
       - if you click on one of the section below the page will scroll to that section
-  ![2021-04-13 13 32 54 Manipulating the DOM - Google](https://user-images.githubusercontent.com/80472863/114546352-5496e980-9c5d-11eb-8850-8ba0a2b8aecb.png)
-
+   ![Capture](https://user-images.githubusercontent.com/80472863/114627827-33aeb280-9cb6-11eb-9fcb-1deb257eb859.PNG)
+    
       - and the section in the navbar highlighted if it is in viewport 
 
 #### About ME :
