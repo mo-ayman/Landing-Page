@@ -34,15 +34,17 @@
 for(const section of sections) {
     /* TODO : create element that refrence to the section an set its attribute */
     let li = document.createElement('li');
+    li.setAttribute('class', 'menu-link');
     li.setAttribute('data',section.getAttribute('id'));
     li.textContent = section.getAttribute('id');
-    li.setAttribute('class', 'menu-link');
     /* TODO : the width of the elements calculated dynamically 
     depending on the number of it relative to the allowed width*/
-    li.setAttribute('style', `width : calc((100% - 22px * ${sections.length}) / ${sections.length})`);
     navbarList.appendChild(li);
 }
-
+if(document.body.clientWidth < sections.length * 110){
+    const head = document.querySelector('page-header');
+    head.setAttribute('style', 'width:100px');
+}
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -62,8 +64,8 @@ for(const section of sections) {
         cordinates = elem.getBoundingClientRect();
         yCordinateOfSection = cordinates.top;
         /* TODO : go to section indexed using scrollBy */
-        window.scrollBy({
-            top: yCordinateOfSection,
+        window.scrollTo({
+            top: yCordinateOfSection + window.pageYOffset,
             left: 0,
             behavior: 'smooth'
           });
@@ -87,18 +89,17 @@ for(const section of sections) {
                 menuLink.forEach(function(htmlElement){
                     
                     if(htmlElement.getAttribute('data') == idOfSection){
-                        htmlElement.setAttribute('style',
-                         `width : calc((100% - 22px * ${sections.length}) / ${sections.length});
+                        htmlElement.setAttribute('style',`
                           background: #333;
                           color: #fff `);
                     }else{
-                        htmlElement.setAttribute('style', `width : calc((100% - 22px * ${sections.length}) / ${sections.length})`);
+                        htmlElement.removeAttribute('style');
                     }
                     
                 });
             }else{
                 /* TODO : remove active class when section is not viewed in viewport */
-                section.removeAttribute('class', 'active');
+                section.removeAttribute('class', 'active'); 
             }
         })
      }

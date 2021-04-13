@@ -65,28 +65,23 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
-.navbar-menu {
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  left: 25%;
-}
-
 #navbar-list {
-  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
-  height: 100%;
   padding: 0;
   margin: 0;
 }
 
-.navbar-menu .menu-link {
-  display: inline-block;
+li.menu-link {
+  position: relative;
+  list-style: none;
+  text-align: center;
   height: 30px;
+  width: 100px;
   padding-top: 8px;
   margin: 0 10px 0 10px;
-  position: relative;
-  top: 5px;
   border-radius: 20px;
   background-color: rgb(72 255 251 / 13%);
   cursor: pointer;
@@ -95,7 +90,7 @@ section {
   color: #000;
 }
 
-.navbar-menu .menu-link:hover {
+.menu-link:hover {
   background: #333;
   color: #fff;
   transition: ease 0.4s all;
@@ -106,8 +101,13 @@ section {
   background-color: rgba(59, 47, 168, 0.2);
   position: fixed;
   top: 0;
+  left: 0;
   height: 50px;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
 }
 
 /* Footer Styles */
