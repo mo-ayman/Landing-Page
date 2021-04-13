@@ -64,8 +64,8 @@ if(document.body.clientWidth < sections.length * 110){
         cordinates = elem.getBoundingClientRect();
         yCordinateOfSection = cordinates.top;
         /* TODO : go to section indexed using scrollBy */
-        window.scrollTo({
-            top: yCordinateOfSection + window.pageYOffset,
+        window.scrollBy({
+            top: yCordinateOfSection,
             left: 0,
             behavior: 'smooth'
           });
